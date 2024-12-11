@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Tsandekidis</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Alex Tsandekidis</h1>
+        <button id="menu-button" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="fields.html">Fields of Interest</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="about.html">About Me</a>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div id="welcome-text">
+                <h2>Welcome to my website!</h2>
+                <p>Hi, I'm Alex Tsandekidis, a Computer and Electronic Engineering student based in Thessaloniki. Beyond
+                    my studies, I have a strong interest in fitness and dedicate time to independent learning in this
+                    field. Welcome to my personal space on the web, where I share my experiences and achievements. Feel
+                    free to explore—this is my first website project for a university course. Let’s connect and enjoy
+                    the journey together!</p>
+                <img id="profile-pic" src="images/johndoe.jpg" alt="John Doe's Photo">
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Connect with Me</h3>
+            <div class="social-media">
+                <a href="https://linkedin.com/in/johndoe">
+                    <img src="lindk.png" alt="LinkedIn" class="icon"> LinkedIn
+                </a>
+            </div>
+            <div class="social-media">
+                <a href="mailto:alextsandekidis@gmail.com">
+                    <img src="gmaillogo.png" alt="Email" class="icon"> alextsandekidis@gmail.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alex Tsandekidis | Building Ideas Into Reality</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.addEventListener('click', closeMenuOnOutsideClick);
+            } else {
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+
+        function closeMenuOnOutsideClick(event) {
+            const menu = document.getElementById('side-menu');
+            const menuButton = document.getElementById('menu-button');
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
