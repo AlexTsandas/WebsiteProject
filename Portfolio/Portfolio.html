@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Tsandekidis-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Alex Tsandekidis</h1>
+        <button id="menu-button" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <a class="nav-link" href="../HomePage\Home.html">Home</a>
+        <a class="nav-link" href="../Fields of Intrest\fields.html">Fields of Interest</a>
+        <a class="nav-link" href="../Portfolio\Portfolio.html">Portfolio</a>
+        <a class="nav-link" href="../AboutMe\aboutme.html">About Me</a>
+    </nav>
+
+    <main>
+
+        <section id="Certificates">
+            <h2>Certificates</h2>
+
+            <section class="skill" id="skill1">
+                <h3>CCNA</h3>
+                <div class="ImgDiv"><img src="C:\Users\alext\repos\github\WebsiteProject\Portfolio\ccna.png" alt=""></div>
+                <p>
+                    In 2023, my commitment to networking led to the successful completion of the CCNA I Introduction to
+                    Networks and CCNA I Switching, Routing, and Wireless Essentials certifications. These
+                    accomplishments represent significant milestones in my career. The expertise gained has equipped me
+                    with the ability to design, implement, and troubleshoot networks with confidence. In addition to
+                    these certifications, my ongoing passion for technology ensures I stay current with the latest
+                    developments in networking.
+                </p>
+            </section>
+
+            <section class="skill" id="skill2">
+                <h3>TRINITY</h3>
+                <div class="ImgDiv"><img src="C:\Users\alext\repos\github\WebsiteProject\Portfolio\trinity.png" alt=""></div>
+                <p>
+                    In 2021, I earned my Grade 8 Piano Diploma, showcasing my skill and dedication to piano. This
+                    achievement reflects my progress and commitment to mastering advanced pieces and improving my
+                    musical abilities
+                </p>
+            </section>
+
+            <section class="skill" id="skill3">
+                <h3>ABRSM</h3>
+                <div class="ImgDiv"><img src="C:\Users\alext\repos\github\WebsiteProject\Portfolio\ABRSMlogo.jpg" alt=""></div>
+                <p>
+                    I completed my Grade 5 Music Theory Diploma, which strengthened my understanding of musical
+                    structures and notation. This achievement helped me deepen my knowledge of theory, enhancing my
+                    overall musicianship and ability to analyze and interpret music more effectively.
+                </p>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alex Tsandekidis | Building Ideas Into Reality</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.addEventListener('click', closeMenuOnOutsideClick);
+            } else {
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+
+        function closeMenuOnOutsideClick(event) {
+            const menu = document.getElementById('side-menu');
+            const menuButton = document.getElementById('menu-button');
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

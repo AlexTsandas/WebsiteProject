@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Tsandekidis-About Me</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    
+    <header>
+        <h1>Alex Tsandekidis</h1>
+        <button id="menu-button" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <a class="nav-link" href="../HomePage\Home.html">Home</a>
+        <a class="nav-link" href="../Fields of Intrest\fields.html">Fields of Interest</a>
+        <a class="nav-link" href="../Portfolio\Portfolio.html">Portfolio</a>
+        <a class="nav-link" href="../AboutMe\aboutme.html">About Me</a>
+    </nav>
+    <p id="welcome"> I am Alexandros Tsandekidis,born and raised in Paphos,Cyprus,8th of April 2005
+        In this section, I share some general information to give you a closer look into who I am. Let's get to know
+        each other a bit better!
+    </p>
+
+    <div class="carousel">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="slide-content">
+                <img src="C:\Users\alext\repos\github\WebsiteProject\AboutMe\weightlifting.png" alt="Hobby 1">
+                <img src="C:\Users\alext\repos\github\WebsiteProject\AboutMe\judo.png" alt="Hobby 1.1">
+                <div class="overlay">
+                    <h2>Fitness</h2>
+                    <p>Fitness has always been a passion of mine. I used to practice Judo and Brazilian Jiu-Jitsu,
+                        pushing
+                        my limits both physically and mentally. However, now I’ve shifted my focus to weightlifting,
+                        where I
+                        find immense strength and satisfaction in every lift. Weightlifting has become my way to
+                        challenge
+                        myself, stay fit, and continually grow stronger.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="slide-content">
+                <img src="C:\Users\alext\repos\github\WebsiteProject\AboutMe\piano.png" alt="Hobby 2">
+                <img src="C:\Users\alext\repos\github\WebsiteProject\AboutMe\guitar.png" alt="Hobby 2.1">
+                <div class="overlay">
+                    <h2>Music</h2>
+                    <p>Music has been a big part of my life for as long as I can remember. I play both the piano and the
+                        guitar, and my years of music theory classes have given me a solid foundation to understand and
+                        create music. Whether it’s playing a complex piano piece or strumming a familiar melody on the
+                        guitar, music is where I focus and express myself best. It’s not just an interest—it’s a skill
+                        I’ve worked hard to develop and truly enjoy.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="slide-content">
+                <img src="hobby3.jpg" alt="Hobby 3">
+                <img src="hobby3.jpg" alt="Hobby 3.1">
+                <div class="overlay">
+                    <h2>Painting</h2>
+                    <p>Expressing my emotions through art helps me connect with my creativity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Alex Tsandekidis | Building Ideas Into Reality</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.addEventListener('click', closeMenuOnOutsideClick);
+            } else {
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+
+        function closeMenuOnOutsideClick(event) {
+            const menu = document.getElementById('side-menu');
+            const menuButton = document.getElementById('menu-button');
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function changeSlide(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+
 </body>
+
 </html>

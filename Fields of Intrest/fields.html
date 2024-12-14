@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Tsandekidis</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Alex Tsandekidis</h1>
+        <button id="menu-button" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav id="side-menu" class="hidden">
+        <a class="nav-link" href="C:\Users\alext\repos\github\WebsiteProject\HomePage\Home.html">Home</a>
+        <a class="nav-link" href="../Fields of Intrest\fields.html">Fields of Interest</a>
+        <a class="nav-link" href="../Portfolio\Portfolio.html">Portfolio</a>
+        <a class="nav-link" href="../AboutMe\aboutme.html">About Me</a>
+    </nav>
+    <main>
+
+        <h2>Fields of Intrest</h2>
+
+        <section id="FirstP">
+
+            <img id="AmImage1" src="C:\Users\alext\repos\github\WebsiteProject\Fields of Intrest\IHUlogo.jpg" alt="">
+
+            <h3>Information and Electronic Engineering</h3>
+            <p>
+                I am pursuing advanced studies at the International Hellenic University (IHU) in Thessaloniki, where I
+                am enrolled in the Department of Information and Electronic Engineering. My goal is to successfully
+                complete the rigorous five-year program within the standard duration. With a strong emphasis on the
+                programming track offered by the department, I am dedicated to building expertise that aligns perfectly
+                with my professional ambitions in the realm of information and electronic engineering.
+            </p>
+
+        </section>
+
+        <section id="SecondP">
+
+            <img src="AboutMePhotos\finan.jpg" alt="">
+
+            <h3>Music</h3>
+            <p>The piano is a source of great interest to me, combining technical skill with emotional expression. It
+                allows me to explore music creatively while developing discipline and focus. Playing brings me joy,
+                whether interpreting pieces or experimenting with my own compositions, making it both a relaxing and
+                enriching pursuit.</p>
+
+        </section>
+
+        <section id="ThirdP">
+
+            <img src="AboutMePhotos\violin.jpg" alt="">
+
+            <h3>The Science of Fitness and Muscle Building</h3>
+            <p>Fitness is more than just a hobby or a way to stay healthy for me. it’s a field I actively study and
+                explore. I’m deeply interested in understanding muscle hypertrophy, strength development, and effective
+                muscle-building techniques. By learning the science behind training and applying it to my routines, I
+                aim to optimize results and deepen my knowledge of how the body works.</p>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2024 Alex Tsandekidis | Building Ideas Into Reality</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            menu.classList.toggle('hidden');
+
+            if (!menu.classList.contains('hidden')) {
+                document.addEventListener('click', closeMenuOnOutsideClick);
+            } else {
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+
+        function closeMenuOnOutsideClick(event) {
+            const menu = document.getElementById('side-menu');
+            const menuButton = document.getElementById('menu-button');
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.add('hidden');
+                document.removeEventListener('click', closeMenuOnOutsideClick);
+            }
+        }
+    </script>
+</body>
+
+</html>

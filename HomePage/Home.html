@@ -16,36 +16,39 @@
     </header>
 
     <nav id="side-menu" class="hidden">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="fields.html">Fields of Interest</a>
-        <a class="nav-link" href="portfolio.html">Portfolio</a>
-        <a class="nav-link" href="about.html">About Me</a>
+        <a class="nav-link" href="C:\Users\alext\repos\github\WebsiteProject\HomePage\Home.html">Home</a>
+        <a class="nav-link" href="../Fields of Intrest\fields.html">Fields of Interest</a>
+        <a class="nav-link" href="../Portfolio\Portfolio.html">Portfolio</a>
+        <a class="nav-link" href="../AboutMe\aboutme.html">About Me</a>
     </nav>
 
     <main>
         <section id="hero">
-            <div id="welcome-text">
-                <h2>Welcome to my website!</h2>
-                <p>Hi, I'm Alex Tsandekidis, a Computer and Electronic Engineering student based in Thessaloniki. Beyond
-                    my studies, I have a strong interest in fitness and dedicate time to independent learning in this
-                    field. Welcome to my personal space on the web, where I share my experiences and achievements. Feel
-                    free to explore—this is my first website project for a university course. Let’s connect and enjoy
-                    the journey together!</p>
-                <img id="profile-pic" src="images/johndoe.jpg" alt="John Doe's Photo">
-            </div>
-        </section>
-
-        <section id="contact">
-            <h3>Connect with Me</h3>
-            <div class="social-media">
-                <a href="https://linkedin.com/in/johndoe">
-                    <img src="lindk.png" alt="LinkedIn" class="icon"> LinkedIn
-                </a>
-            </div>
-            <div class="social-media">
-                <a href="mailto:alextsandekidis@gmail.com">
-                    <img src="gmaillogo.png" alt="Email" class="icon"> alextsandekidis@gmail.com
-                </a>
+            <div id="welcome-container" style="display: flex; align-items: flex-start; justify-content: space-between;">
+                <div id="welcome-text" style="flex: 1; margin-right: 20px;">
+                    <h2>Welcome to my website!</h2>
+                    <p>Hi, I'm Alex Tsandekidis, a Computer and Electronic Engineering student based in Thessaloniki. Beyond
+                        my studies, I have a strong interest in fitness and dedicate time to independent learning in this
+                        field. Welcome to my personal space on the web, where I share my experiences and achievements. Feel
+                        free to explore—this is my first website project for a university course. Let’s connect and enjoy
+                        the journey together!</p>
+                    <div id="contact-links" style="display: flex; align-items: center;">
+                        <div style="flex: 1;">
+                            <div class="social-media">
+                                <a href="https://linkedin.com/in/johndoe">
+                                    <img src="lindk.png" alt="LinkedIn" class="icon"> LinkedIn
+                                </a>
+                            </div>
+                            <div class="social-media">
+                                <a href="mailto:alextsandekidis@gmail.com">
+                                    <img src="gmaillogo.png" alt="Email" class="icon"> alextsandekidis@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <button id="connect-button" style="margin-left: 20px;">Contact Me</button>
+                    </div>
+                </div>
+                <img id="profile-pic" src="images/johndoe.jpg" alt="John Doe's Photo" style="flex: 0 0 300px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
             </div>
         </section>
     </main>
@@ -78,6 +81,3 @@
 </body>
 
 </html>
-
-
-
